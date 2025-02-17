@@ -1,0 +1,11 @@
+use("platzi_store")
+db.products.updateOne(
+    // query
+    {_id: ObjectId("67b384927b01c7ba8ad9ff29")}, // Encuentra un id generado por mongo.
+    // change => operators
+    {
+        $inc: {
+            price: 500
+        }
+    }
+)
