@@ -11,7 +11,7 @@ use("platzi_store")
 db.inventory.updateMany({}, { 
     $pull: { 
         tags: {
-            $in: ["appliance", "school"]
+            $in: ["appliance", "school"] // Hace match con algunos de los valores especificados en un arreglo.
         }
     }
 })
