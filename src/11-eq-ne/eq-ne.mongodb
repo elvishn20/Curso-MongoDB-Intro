@@ -1,0 +1,10 @@
+use("platzi_store")
+
+// usando $eq (igual a)
+// db.inventory.find({qty: 20})
+// db.inventory.find({qty: { $eq: 20} })
+// db.inventory.find({ "item.code" : "123"}) // Una consulta a un subdocumento de forma directa.
+// db.inventory.find({ "item.code" : {$eq: "123"}})
+
+// usando $ne (no igual a)
+db.inventory.find({qty: {$ne: 20}})
