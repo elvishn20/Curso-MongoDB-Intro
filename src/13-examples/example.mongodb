@@ -1,0 +1,12 @@
+use("platzi_store")
+
+db.iot.updateMany(
+    // query
+    { sensor: "A001" },
+    // update
+    {
+        $pull: { // Elimina los 2 elementos del readings que estan en el sensor A001.
+            readings: { $gte: 3 }
+        }
+    }
+)
