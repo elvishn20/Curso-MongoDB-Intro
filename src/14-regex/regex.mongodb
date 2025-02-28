@@ -1,0 +1,8 @@
+use("platzi_store")
+
+// db.inventory.find({"item.description": "Single line description."})
+// db.inventory.find({"item.description": { $regex: /line/ }}) // Con regex hace busquedas por medio de expresiones regulares.
+// db.inventory.find({"item.description": { $regex: /LINE/i }}) // La i al final indica que busque la palabra sin inportar como inicie.
+// db.inventory.find({"item.description": { $regex: /line$/i }}) // Realiza la busqueda de la palabra al final del texto.
+// db.inventory.find({"item.description": { $regex: /^single/i }}) // Hace la busqueda de la palabra al inicio del texto.
+db.inventory.find({"item.description": { $regex: /^s/im }}) // Realiza la busqueda de la palabra al inicio, incluyendo los saltos de linea.
