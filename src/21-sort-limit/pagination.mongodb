@@ -1,0 +1,6 @@
+use("platzi_store")
+
+db.categories
+  .find()
+  .skip(4) // Con skip lo que hace es brincar a la posicion del elemento, en este caso la posicion 4 del array.
+  .limit(3)

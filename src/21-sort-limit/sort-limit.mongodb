@@ -1,0 +1,9 @@
+use("sample_training")
+
+// sort lo que hace es ordenar los elementos, dependiendo del orden que se elija.
+// sort = 1 los ordena de forma ascendente.
+// sort = -1 los ordena de forma descendente.
+db.zips
+    .find({pop: {$gte: 100}})
+    .sort({pop: 1})
+    .limit(5) // limit devuelve la cantidad de documentos que se desea retornar, aqui devuelve 5 documentos.
