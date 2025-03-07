@@ -1,0 +1,21 @@
+use("sample_training")
+
+// db.trips.find({"start station location.type": "Point"})
+
+// db.companies.find({ // El .0 hace referencia a la primera posicion del arreglo, en este caso al CEO de la empresa.
+//     "relationships.0.person.first_name": "Mark"
+// }, {
+//     name: 1,
+//     relationships: 1
+// }).count() // 108
+
+db.companies.find({ // Aqui hace la busqueda a nivel de subdocumentos por el primer nombre sin importar el puesto en la empresa.
+    relationships: {
+        $elemMatch: {
+            "person.first_name": "Mark"
+        }
+    }
+}, {
+    name: 1,
+    relationships: 1
+}).count() // 523
